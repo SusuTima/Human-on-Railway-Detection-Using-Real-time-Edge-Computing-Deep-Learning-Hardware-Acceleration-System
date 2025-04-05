@@ -1,0 +1,52 @@
+import re
+import numpy as np
+
+def convert_txt_to_coe(input_txt_path, output_coe_path):
+    """
+    Extract tensor values from the input text file, convert them to float16,
+    and save them in COE format.
+
+    Parameters:
+        input_txt_path (str): Path to the input .txt file.
+        output_coe_path (str): Path to the output .coe file.
+    """
+    try:
+        with open(input_txt_path, "r") as file:
+            data = file.read()
+
+        # Extract all tensor data using regex
+        tensor_pattern = re.compile(r"tensor\(([\s\S]*?)\)")
+        tensor_matches = tensor_pattern.findall(data)
+
+        # Flatten and clean all tensor values
+        all_values = []
+        for match in tensor_matches:
+            # Remove brackets and newlines
+            clean_values = re.sub(r"[^\d\.\-eE]", " ", match)  # Keep only numbers, dots, 'e', 'E', and '-'
+            # Split into individual numbers
+            values = [float(val) for val in clean_values.split() if val]
+            all_values.extend(values)
+
+        # Convert to float16
+        float16_values = np.array(all_values, dtype=np.float16)
+
+        # Convert to hexadecimal representation
+        hex_values = [f"{val.view(np.uint16):04X}" for val in float16_values]
+
+        # Write to COE file
+        with open(output_coe_path, "w") as coe_file:
+            coe_file.write("memory_initialization_radix=16;\n")
+            coe_file.write("memory_initialization_vector=\n")
+            coe_file.write(",\n".join(hex_values) + ";\n")
+
+        print(f"COE file saved successfully to {output_coe_path}")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# File paths
+input_txt_path = "/content/parameters_output_3x3.txt"  # Replace with the path to your input file
+output_coe_path = "/content/parameters_output_3x3_float16.coe"  # Replace with desired output path
+
+# Convert the file
+convert_txt_to_coe(input_txt_path, output_coe_path)
