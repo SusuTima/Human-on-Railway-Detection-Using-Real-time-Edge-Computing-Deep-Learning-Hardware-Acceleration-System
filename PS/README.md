@@ -1,4 +1,8 @@
-Download All files in "TOP" and "Other Modules" to Vivado, and create a block design according to the picture below (Vivado_Block_Design.png). Setting the base address of the bram ctrl to 0x4000_0000 and address range to 32K (10000). Enable FIFO in AXI Interconnect. After finishing the block design, export the tcl, hwh, bit files and run the code in "Preprocess." Make sure the three files have the same name.
+請將「TOP」和「Other Modules」中的所有檔案下載至 Vivado，並依照下方圖片（Vivado_Block_Design.png）建立 Block Design。
+將 BRAM Controller 的 Base Address 設定為 0x4000_0000，Address Range 設定為 32K（0x10000）。
+在 AXI Interconnect 中啟用 FIFO 功能。
+完成 Block Design 後，匯出 .tcl、.hwh、.bit 三個檔案，並執行「Preprocess」資料夾中的程式碼。
+請確保這三個檔案的檔名一致。
 
 ![Alt Text](Vivado_Block_Design.png)
 
