@@ -3,22 +3,12 @@ BRAM_Control會呼叫到 12 個 BRAM_Big 及 32 個 BRAM_small (共44個)，設�
 Basic: 
   - Interface Type: Native
   - Memory Type: True Dual Port RAM
-<br/>Port Options: (for both Port A and Port B)
+<br/>
+<br/>
+Port Options: (for both Port A and Port B)
   - Write/Read Width: 16
   - Write/Read Depth
-    --BRAM_Big: 6724
-    --BRAM_small: 1450
-    --disable "Primitives Output Register" and "Core Output Register"
-<br/>
-- **Interface Type:** Native  
-- **Memory Type:** True Dual Port RAM  
-- **Port Options (Port A and Port B):**
-  - **Write/Read Width:** 16
-  - **Write/Read Depth:**
-    - BRAM_Big: 6724
-    - BRAM_Small: 1450
-- **Registers:**
-  - Primitives Output Register: Disabled
-  - Core Output Register: Disabled
+    --BRAM_Big: 6724; BRAM_small: 1450
+  -disable "Primitives Output Register" and "Core Output Register"
 
 詳請可參考BRAM_Settings.png
