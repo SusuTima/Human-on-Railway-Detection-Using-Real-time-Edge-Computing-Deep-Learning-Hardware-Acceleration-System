@@ -9,5 +9,16 @@ Basic:
     --BRAM_Big: 6724
     --BRAM_small: 1450
     --disable "Primitives Output Register" and "Core Output Register"
+<br/>
+- **Interface Type:** Native  
+- **Memory Type:** True Dual Port RAM  
+- **Port Options (Port A and Port B):**
+  - **Write/Read Width:** 16
+  - **Write/Read Depth:**
+    - BRAM_Big: 6724
+    - BRAM_Small: 1450
+- **Registers:**
+  - Primitives Output Register: Disabled
+  - Core Output Register: Disabled
 
 詳請可參考BRAM_Settings.png
