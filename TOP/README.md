@@ -7,7 +7,7 @@ Basic:
 <br/>
 Port Options: (for both Port A and Port B)
   - Write/Read Width: 16
-  - Write/Read Depth
+  -  Write/Read Depth
     --BRAM_Big: 6724; BRAM_small: 1450
   -disable "Primitives Output Register" and "Core Output Register"
 
