@@ -3,7 +3,7 @@ BRAM_Control會呼叫到 12 個 BRAM_Big 及 32 個 BRAM_small (共44個)，設�
 Basic: 
   - Interface Type: Native
   - Memory Type: True Dual Port RAM
-Port Options: (for both Port A and Port B)
+<br/>Port Options: (for both Port A and Port B)
   - Write/Read Width: 16
   - Write/Read Depth
     --BRAM_Big: 6724
