@@ -19,7 +19,7 @@ module Fully_Connect#(
     logic [datawidth*output_nodes-1:0] bias;
     logic start;
     
-    assign bias = 32'h3c00_3c00;
+    assign bias = 32'h379c_b7b4;
     assign start = (state == Fully_Connect) ? 1 : 0;
     
     FC_Ctrl_Unit #(
@@ -39,7 +39,7 @@ module Fully_Connect#(
         .done(done)
     );
     
-    FC_Weight Weights(    //開一個256*100的Single Port ROM
+    FC_Weight Weight(    //?}?@??256*100??Single Port ROM
         .clka(clk),
         .ena(start),
         .addra(weight_addr),
@@ -47,4 +47,3 @@ module Fully_Connect#(
     );
     
 endmodule
-
